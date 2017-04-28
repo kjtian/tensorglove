@@ -1,0 +1,177 @@
+[I 11:24:40.984 NotebookApp] [nb_conda_kernels] enabled, 4 kernels found
+[I 11:24:41.995 NotebookApp] ✓ nbpresent HTML export ENABLED
+[W 11:24:41.996 NotebookApp] ✗ nbpresent PDF export DISABLED: No module named 'nbbrowserpdf'
+[I 11:24:42.001 NotebookApp] [nb_conda] enabled
+[I 11:24:42.070 NotebookApp] [nb_anacondacloud] enabled
+[I 11:24:42.081 NotebookApp] Serving notebooks from local directory: /home/kjtian/embeddings/Politics
+[I 11:24:42.081 NotebookApp] 0 active kernels 
+[I 11:24:42.081 NotebookApp] The Jupyter Notebook is running at: http://localhost:8889/
+[I 11:24:42.081 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 11:24:43.984 NotebookApp] 404 GET /api/kernels/0f9c59ad-921d-48fc-a200-d6de325e6a9b/channels?session_id=5FA5260E666E4476930CEF768F7AE177 (::1): Kernel does not exist: 0f9c59ad-921d-48fc-a200-d6de325e6a9b
+[W 11:24:44.026 NotebookApp] 404 GET /api/kernels/0f9c59ad-921d-48fc-a200-d6de325e6a9b/channels?session_id=5FA5260E666E4476930CEF768F7AE177 (::1) 47.43ms referer=None
+[I 11:24:57.908 NotebookApp] Interrupted...
+[I 11:24:57.909 NotebookApp] Shutting down kernels
+[I 11:25:01.881 NotebookApp] [nb_conda_kernels] enabled, 4 kernels found
+[I 11:25:02.779 NotebookApp] [nb_conda] enabled
+[I 11:25:02.846 NotebookApp] [nb_anacondacloud] enabled
+[I 11:25:02.953 NotebookApp] ✓ nbpresent HTML export ENABLED
+[W 11:25:02.953 NotebookApp] ✗ nbpresent PDF export DISABLED: No module named 'nbbrowserpdf'
+[I 11:25:02.963 NotebookApp] Serving notebooks from local directory: /home/kjtian/embeddings/Politics
+[I 11:25:02.963 NotebookApp] 0 active kernels 
+[I 11:25:02.963 NotebookApp] The Jupyter Notebook is running at: http://localhost:8889/
+[I 11:25:02.964 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 11:25:03.691 NotebookApp] Interrupted...
+[I 11:25:03.692 NotebookApp] Shutting down kernels
+Traceback (most recent call last):
+  File "/anaconda/envs/py35/bin/jupyter-notebook", line 6, in <module>
+    sys.exit(notebook.notebookapp.main())
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/jupyter_core/application.py", line 267, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/traitlets/config/application.py", line 652, in launch_instance
+    app.initialize(argv)
+  File "<decorator-gen-7>", line 2, in initialize
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/traitlets/config/application.py", line 87, in catch_config_error
+    return method(app, *args, **kwargs)
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/notebook/notebookapp.py", line 1069, in initialize
+    self.init_configurables()
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/notebook/notebookapp.py", line 837, in init_configurables
+    parent=self,
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/nb_conda_kernels/manager.py", line 32, in __init__
+    len(self._conda_kspecs))
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/nb_conda_kernels/manager.py", line 138, in _conda_kspecs
+    if self._conda_info is None:
+  File "/anaconda/envs/py35/lib/python3.5/site-packages/nb_conda_kernels/manager.py", line 47, in _conda_info
+    p = subprocess.check_output(["conda", "info", "--json"]
+  File "/anaconda/envs/py35/lib/python3.5/subprocess.py", line 626, in check_output
+    **kwargs).stdout
+  File "/anaconda/envs/py35/lib/python3.5/subprocess.py", line 695, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/anaconda/envs/py35/lib/python3.5/subprocess.py", line 1059, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt
+[I 07:28:59.386 NotebookApp] [nb_conda_kernels] enabled, 4 kernels found
+[I 07:28:59.395 NotebookApp] Writing notebook server cookie secret to /run/user/1002/jupyter/notebook_cookie_secret
+[I 07:29:00.306 NotebookApp] [nb_conda] enabled
+[I 07:29:00.410 NotebookApp] ✓ nbpresent HTML export ENABLED
+[W 07:29:00.410 NotebookApp] ✗ nbpresent PDF export DISABLED: No module named 'nbbrowserpdf'
+[I 07:29:00.480 NotebookApp] [nb_anacondacloud] enabled
+[I 07:29:00.490 NotebookApp] Serving notebooks from local directory: /home/kjtian/embeddings/Politics
+[I 07:29:00.490 NotebookApp] 0 active kernels 
+[I 07:29:00.491 NotebookApp] The Jupyter Notebook is running at: http://localhost:8890/
+[I 07:29:00.491 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 07:29:30.506 NotebookApp] 302 GET / (::1) 1.14ms
+[W 07:29:36.962 NotebookApp] Notebook Merge.ipynb is not trusted
+[I 07:29:37.901 NotebookApp] Kernel started: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 07:31:38.701 NotebookApp] Saving file at /Merge.ipynb
+[W 07:31:38.702 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 07:38:41.073 NotebookApp] Creating new notebook in 
+[I 07:38:43.816 NotebookApp] Kernel started: 0b530510-bb5e-43bb-b0cd-98f35753ed70
+[I 07:40:45.039 NotebookApp] Saving file at /trial.ipynb
+E tensorflow/core/client/tensor_c_api.cc:485] Attempting to use uninitialized value Variable
+	 [[Node: _send_Variable_0 = _Send[T=DT_FLOAT, client_terminated=true, recv_device="/job:localhost/replica:0/task:0/cpu:0", send_device="/job:localhost/replica:0/task:0/cpu:0", send_device_incarnation=7833400780297953571, tensor_name="Variable:0", _device="/job:localhost/replica:0/task:0/cpu:0"](Variable)]]
+E tensorflow/core/client/tensor_c_api.cc:485] Attempting to use uninitialized value Variable_1
+	 [[Node: _send_Variable_1_0 = _Send[T=DT_FLOAT, client_terminated=true, recv_device="/job:localhost/replica:0/task:0/cpu:0", send_device="/job:localhost/replica:0/task:0/cpu:0", send_device_incarnation=673121748412479178, tensor_name="Variable_1:0", _device="/job:localhost/replica:0/task:0/cpu:0"](Variable_1)]]
+[I 07:42:44.542 NotebookApp] Saving file at /trial.ipynb
+E tensorflow/core/client/tensor_c_api.cc:485] Attempting to use uninitialized value Variable_1
+	 [[Node: _send_Variable_1_0 = _Send[T=DT_FLOAT, client_terminated=true, recv_device="/job:localhost/replica:0/task:0/cpu:0", send_device="/job:localhost/replica:0/task:0/cpu:0", send_device_incarnation=-6956836184632882040, tensor_name="Variable_1:0", _device="/job:localhost/replica:0/task:0/cpu:0"](Variable_1)]]
+[I 07:44:44.553 NotebookApp] Saving file at /trial.ipynb
+E tensorflow/core/client/tensor_c_api.cc:485] Attempting to use uninitialized value Variable_1
+	 [[Node: _send_Variable_1_0 = _Send[T=DT_FLOAT, client_terminated=true, recv_device="/job:localhost/replica:0/task:0/cpu:0", send_device="/job:localhost/replica:0/task:0/cpu:0", send_device_incarnation=-2146844831375650290, tensor_name="Variable_1:0", _device="/job:localhost/replica:0/task:0/cpu:0"](Variable_1)]]
+[I 07:54:45.966 NotebookApp] Saving file at /trial.ipynb
+[I 08:02:44.065 NotebookApp] Saving file at /trial.ipynb
+[I 08:05:39.951 NotebookApp] Saving file at /Merge.ipynb
+[W 08:05:39.952 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:09:42.507 NotebookApp] Saving file at /Merge.ipynb
+[W 08:09:42.508 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:13:38.905 NotebookApp] Saving file at /Merge.ipynb
+[W 08:13:38.906 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:15:38.910 NotebookApp] Saving file at /Merge.ipynb
+[W 08:15:38.912 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:19:38.798 NotebookApp] Saving file at /Merge.ipynb
+[W 08:19:38.799 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:21:38.288 NotebookApp] Saving file at /Merge.ipynb
+[W 08:21:38.290 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 08:28:36.576 NotebookApp] Saving file at /trial.ipynb
+[I 08:30:37.604 NotebookApp] Saving file at /trial.ipynb
+[I 08:32:37.583 NotebookApp] Saving file at /trial.ipynb
+[W 19:24:40.768 NotebookApp] WebSocket ping timeout after 119183 ms.
+[I 14:40:10.620 NotebookApp] 302 GET / (::1) 0.75ms
+[W 14:40:32.291 NotebookApp] Notebook Merge.ipynb is not trusted
+[I 14:41:18.499 NotebookApp] Kernel interrupted: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 14:41:18.697 NotebookApp] Kernel interrupted: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 14:41:19.264 NotebookApp] Kernel interrupted: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 14:42:33.292 NotebookApp] Saving file at /Merge.ipynb
+[W 14:42:33.294 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 15:06:33.551 NotebookApp] Saving file at /Merge.ipynb
+[W 15:06:33.555 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 15:08:33.641 NotebookApp] Saving file at /Merge.ipynb
+[W 15:08:33.642 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 15:10:33.856 NotebookApp] Saving file at /Merge.ipynb
+[W 15:10:33.858 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 15:12:33.550 NotebookApp] Saving file at /Merge.ipynb
+[W 15:12:33.552 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 15:14:33.365 NotebookApp] Saving file at /Merge.ipynb
+[W 15:14:33.367 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 16:14:33.594 NotebookApp] Saving file at /Merge.ipynb
+[W 16:14:33.596 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 16:16:33.588 NotebookApp] Saving file at /Merge.ipynb
+[W 16:16:33.589 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 16:18:33.592 NotebookApp] Saving file at /Merge.ipynb
+[W 16:18:33.594 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 16:22:33.605 NotebookApp] Saving file at /Merge.ipynb
+[W 16:22:33.607 NotebookApp] Saving untrusted notebook Merge.ipynb
+[W 16:50:33.459 NotebookApp] WebSocket ping timeout after 118629 ms.
+[I 06:59:55.492 NotebookApp] 302 GET / (::1) 0.75ms
+[W 07:00:17.497 NotebookApp] Notebook Merge.ipynb is not trusted
+[I 07:02:33.080 NotebookApp] Saving file at /Merge.ipynb
+[W 07:02:33.082 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 19:03:29.252 NotebookApp] 302 GET / (::1) 0.75ms
+[I 19:03:29.638 NotebookApp] 302 GET / (::1) 0.68ms
+[W 19:11:49.021 NotebookApp] Notebook Merge.ipynb is not trusted
+[W 19:13:15.039 NotebookApp] Notebook Evaluate.ipynb is not trusted
+[I 19:13:15.737 NotebookApp] Kernel started: b5276c20-b9c0-430c-8fe9-677a73034770
+[I 17:53:05.534 NotebookApp] 302 GET / (::1) 0.75ms
+[I 17:53:05.773 NotebookApp] 302 GET / (::1) 0.62ms
+[W 17:53:11.808 NotebookApp] Notebook Merge.ipynb is not trusted
+[I 17:54:43.940 NotebookApp] Kernel interrupted: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 17:54:44.101 NotebookApp] Kernel interrupted: eb3e057c-33b7-4e66-bd5f-01a076c65e87
+[I 17:55:13.109 NotebookApp] Saving file at /Merge.ipynb
+[W 17:55:13.111 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 17:57:13.093 NotebookApp] Saving file at /Merge.ipynb
+[W 17:57:13.094 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 17:59:13.497 NotebookApp] Saving file at /Merge.ipynb
+[W 17:59:13.499 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:03:13.489 NotebookApp] Saving file at /Merge.ipynb
+[W 18:03:13.491 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:05:13.042 NotebookApp] Saving file at /Merge.ipynb
+[W 18:05:13.043 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:07:12.888 NotebookApp] Saving file at /Merge.ipynb
+[W 18:07:12.889 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:09:13.454 NotebookApp] Saving file at /Merge.ipynb
+[W 18:09:13.455 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:11:12.910 NotebookApp] Saving file at /Merge.ipynb
+[W 18:11:12.911 NotebookApp] Saving untrusted notebook Merge.ipynb
+[W 18:12:17.717 NotebookApp] Notebook Evaluate Robust.ipynb is not trusted
+[I 18:12:18.798 NotebookApp] Kernel started: 4226400b-610d-4d54-b013-1cd51aaf22ef
+[W 18:12:26.539 NotebookApp] Notebook Evaluate.ipynb is not trusted
+[W 18:12:35.008 NotebookApp] Notebook Politics Dataset.ipynb is not trusted
+[I 18:12:35.445 NotebookApp] Kernel started: ca77dede-b1d6-4846-b24d-a2c22ebf0828
+[I 18:13:12.931 NotebookApp] Saving file at /Merge.ipynb
+[W 18:13:12.932 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 18:14:36.823 NotebookApp] Saving file at /Politics Dataset.ipynb
+[W 18:14:36.824 NotebookApp] Saving untrusted notebook Politics Dataset.ipynb
+[W 18:17:06.418 NotebookApp] WebSocket ping timeout after 119911 ms.
+[W 18:17:13.221 NotebookApp] WebSocket ping timeout after 119109 ms.
+[W 19:15:38.016 NotebookApp] Notebook Politics Dataset.ipynb is not trusted
+[I 19:17:38.734 NotebookApp] Saving file at /Politics Dataset.ipynb
+[W 19:17:38.735 NotebookApp] Saving untrusted notebook Politics Dataset.ipynb
+[W 19:18:21.940 NotebookApp] Notebook Politics Dataset.ipynb is not trusted
+[W 19:18:40.813 NotebookApp] Notebook Evaluate.ipynb is not trusted
+[I 19:18:49.319 NotebookApp] Saving file at /GetData.ipynb
+[W 19:18:49.320 NotebookApp] Saving untrusted notebook GetData.ipynb
+[W 19:19:01.824 NotebookApp] Notebook Merge.ipynb is not trusted
+[I 19:21:02.822 NotebookApp] Saving file at /Merge.ipynb
+[W 19:21:02.823 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 19:25:02.513 NotebookApp] Saving file at /Merge.ipynb
+[W 19:25:02.514 NotebookApp] Saving untrusted notebook Merge.ipynb
+[I 19:32:29.146 NotebookApp] Saving file at /GetData.ipynb
