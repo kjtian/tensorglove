@@ -39,8 +39,9 @@ class GloVeModel():
         self.__cembeddings = None
         self.__tembeddings = None
 
-    def fit_to_corpus(self):
-        self.__word_to_id = pickle.load(open("word_dict_politics.p", 'rb')) 
+    def fit_to_corpus(self,wordnum):
+        dictname = "word_dict_politics_" + wordnum + ".p"
+        self.__word_to_id = pickle.load(open(dictname, 'rb')) 
         self.__words = self.__word_to_id.keys()
         self.__cells = ["Conservative", "NeutralPolitics", "PoliticalDiscussion", "SandersForPresident", "The_Donald", "politics"]
         self.__cell_to_id = {cell: i for i, cell in enumerate(self.__cells)}
@@ -96,7 +97,7 @@ class GloVeModel():
 
             # Loss function
 
-            focal_embedding = tf.nn.embedding_lookup([focal_embeddings], self.__focal_input)
+            focal_embedding = tf.nn.embedding_lookup([focal_embeddings], self.__focal_input) # what is lookup here?
             context_embedding = tf.nn.embedding_lookup([context_embeddings], self.__context_input)
             cell_embedding = tf.nn.embedding_lookup([cell_embeddings], self.__cell_input)
             time_embedding = tf.nn.embedding_lookup([time_embeddings], self.__time_input)
@@ -111,6 +112,7 @@ class GloVeModel():
                     tf.div(self.__cooccurrence_count, count_max),
                     scaling_factor))
 
+            # multiple product?
             embedding_product = tf.reduce_sum(tf.mul(tf.mul(tf.mul(tf.mul(tf.mul(focal_embedding, context_embedding), cell_embedding), cell_embedding), time_embedding), time_embedding), 1)
 
             log_cooccurrences = tf.log(tf.to_float(self.__cooccurrence_count))
@@ -126,15 +128,17 @@ class GloVeModel():
             single_losses = tf.mul(weighting_factor, distance_expr)
             self.__total_loss = tf.reduce_sum(single_losses)
 
+            # why adam?
             self.__optimizer = tf.train.AdamOptimizer(self.learning_rate).minimize(
                 self.__total_loss)
 
-            self.__combined_embeddings = tf.add(focal_embeddings, context_embeddings,
+            self.__combined_embeddings = tf.add(focal_embeddings, context_embeddings,   # why add
                                                 name="combined_embeddings")
             self.__cell_embeddings = cell_embeddings
             self.__time_embeddings = time_embeddings
 
     def train(self, num_epochs):
+        self.epoch = num_epochs
         batches = self.__prepare_batches()
         total_steps = 0
         with tf.Session(graph=self.__graph) as session:
@@ -142,7 +146,7 @@ class GloVeModel():
             for epoch in range(num_epochs):
                 print epoch
                 shuffle(batches)
-                for batch_index, batch in enumerate(batches):
+                for batch_index, batch in enumerate(batches):   #how does the batch work, why take batches
                     i_s, j_s, k_s, l_s, counts = batch
                     if len(counts) != self.batch_size:
                         continue
@@ -209,22 +213,24 @@ class GloVeModel():
             raise NotTrainedError("Need to train model before accessing embeddings")
         return self.__tembeddings
 
-    def flush_embeddings(self):
-        flushfile = open("vectors.txt", 'w')
+    def flush_embeddings(self,numword):
+        filename_parameter = 'TrainedVec/' + numword + '_' + str(self.embedding_size) + 'dim_'+ str(self.epoch) + 'epoch_'+ \
+                    str(self.learning_rate) + 'learn_' + str(self.cooccurrence_cap) + 'cc_'
+        flushfile = open(filename_parameter + "vectors.txt", 'w')
         for word in self.__words:
             vec = self.embeddings[self.__word_to_id[word]]
             line = word + " " + " ".join(map(str, vec)) + "\n"
             flushfile.write(line)
         flushfile.write("filler")
         flushfile.close()
-        flushfile = open("cellvectors.txt", 'w')
+        flushfile = open(filename_parameter + "cellvectors.txt", 'w')
         for cell in self.__cells:
             vec = self.cembedding[self.__cell_to_id[cell]]
             line = cell + " " + " ".join(map(str, [abs(v) for v in vec])) + "\n"
             flushfile.write(line)
         flushfile.write("filler")
         flushfile.close()
-        flushfile = open("timevectors.txt", 'w')
+        flushfile = open(filename_parameter + "timevectors.txt", 'w')
         for time in self.__times:
             vec = self.tembedding[self.__time_to_id[time]]
             line = time + " " + " ".join(map(str, [abs(v) for v in vec])) + "\n"

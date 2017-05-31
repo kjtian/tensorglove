@@ -124,7 +124,7 @@ class GloVeModel():
                 tf.neg(log_cooccurrences)]))
 
             single_losses = tf.mul(weighting_factor, distance_expr)
-            self.__total_loss = tf.add_n([tf.reduce_sum(single_losses), tf.mul(0.01, tf.reduce_sum(tf.abs(cell_embedding))), tf.mul(0.01, tf.reduce_sum(tf.abs(time_embedding)))])
+            self.__total_loss = tf.add_n([tf.reduce_sum(single_losses), tf.mul(0.01, tf.reduce_sum(tf.abs(cell_embedding)))])
 
             self.__optimizer = tf.train.AdamOptimizer(self.learning_rate).minimize(
                 self.__total_loss)
@@ -135,6 +135,7 @@ class GloVeModel():
             self.__time_embeddings = time_embeddings
 
     def train(self, num_epochs):
+        self.epoch = num_epochs
         batches = self.__prepare_batches()
         total_steps = 0
         with tf.Session(graph=self.__graph) as session:
@@ -210,21 +211,23 @@ class GloVeModel():
         return self.__tembeddings
 
     def flush_embeddings(self):
-        flushfile = open("vectors.txt", 'w')
+        filename_parameter = 'TrainedVec/' + str(self.embedding_size) + 'dim_'+ str(self.epoch) + 'epoch_'+ \
+                    str(self.learning_rate) + 'learn_' + str(self.cooccurrence_cap) + 'cc_'
+        flushfile = open(filename_parameter + "vectors.txt", 'w')
         for word in self.__words:
             vec = self.embeddings[self.__word_to_id[word]]
             line = word + " " + " ".join(map(str, vec)) + "\n"
             flushfile.write(line)
         flushfile.write("filler")
         flushfile.close()
-        flushfile = open("cellvectors.txt", 'w')
+        flushfile = open("filename_parameter + cellvectors.txt", 'w')
         for cell in self.__cells:
             vec = self.cembedding[self.__cell_to_id[cell]]
             line = cell + " " + " ".join(map(str, [abs(v) for v in vec])) + "\n"
             flushfile.write(line)
         flushfile.write("filler")
         flushfile.close()
-        flushfile = open("timevectors.txt", 'w')
+        flushfile = open("filename_parameter + timevectors.txt", 'w')
         for time in self.__times:
             vec = self.tembedding[self.__time_to_id[time]]
             line = time + " " + " ".join(map(str, [abs(v) for v in vec])) + "\n"
